@@ -7,7 +7,8 @@ class Task(models.Model):
     variant = models.IntegerField(default=0)
     group = models.CharField(max_length=5)
     question = models.TextField(blank=True)
-    img = models.ImageField(blank=True)
+    img = models.ImageField( upload_to='task', blank=True, null=True )
+
 
     def __str__(self):
         return f'{self.group}.{self.variant}.{self.numtask}: {self.question}'
